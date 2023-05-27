@@ -52,7 +52,7 @@ document
   .getElementById("logBaseReversed")
   .addEventListener("click", ReverseAndlogData);
 
-// user toReversed as this does nto mutate the original
+// user toReversed as this does notgit  mutate the original
 function ReverseAndlogData() {
   const reversedData = baseData.toReversed();
   //or
@@ -157,8 +157,10 @@ document
   .addEventListener("click", replaceBrownWithSandyFunc);
 
   function replaceBrownWithSandyFunc() {
-    
+
     let contentToChange = document.getElementById("stringText").innerHTML
+
     contentToChange = contentToChange.replace(/brown/g, "sandy")
+
     document.getElementById("stringText").innerHTML = contentToChange;
   }
