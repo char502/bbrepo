@@ -52,7 +52,7 @@ document
   .getElementById("logBaseReversed")
   .addEventListener("click", ReverseAndlogData);
 
-// user toReversed as this does notgit  mutate the original
+// user toReversed as this does not mutate the original
 function ReverseAndlogData() {
   const reversedData = baseData.toReversed();
   //or
@@ -139,12 +139,16 @@ document
   .addEventListener("click", reverseEveryWordFunc);
 
 function reverseEveryWordFunc() {
-
   let contentToChange = document.getElementById("stringText").innerHTML;
 
-  contentToChange = contentToChange.split(/\b/g).map((word) => {
-    return word.split('').reverse().join('')
-  }).join('');
+  contentToChange = contentToChange
+    .split(/\b/g)
+    .map((word) => {
+      return word.split("").reverse().join("");
+    })
+    .join("");
+
+  console.log(contentToChange);
 
   document.getElementById("stringText").innerHTML = contentToChange;
 }
@@ -156,11 +160,49 @@ document
   .getElementById("replaceBrownWithSandy")
   .addEventListener("click", replaceBrownWithSandyFunc);
 
-  function replaceBrownWithSandyFunc() {
+function replaceBrownWithSandyFunc() {
+  let contentToChange = document.getElementById("stringText").innerHTML;
 
-    let contentToChange = document.getElementById("stringText").innerHTML
+  contentToChange = contentToChange.replace(/brown/g, "sandy");
 
-    contentToChange = contentToChange.replace(/brown/g, "sandy")
+  console.log(contentToChange);
 
-    document.getElementById("stringText").innerHTML = contentToChange;
+  document.getElementById("stringText").innerHTML = contentToChange;
+}
+
+// =============================================
+
+const input = document.getElementById("forLocalStorage");
+
+const displayedResult = document.getElementById("storageResult");
+
+input.addEventListener("input", addToLocalStorge);
+
+function addToLocalStorge(e) {
+  if (!localStorage.getItem("storage")) {
+    const dataInput = e.target.value;
+    localStorage.setItem("storage", JSON.stringify(dataInput));
+  } else {
+    const newValue = e.target.value;
+    window.localStorage.setItem("storage", newValue);
   }
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  (input.value = localStorage.getItem("storage")),
+    (displayedResult.textContent = localStorage.getItem("storage"));
+});
+
+// =========================================================
+
+// Reset string if it gets too long
+
+document
+  .getElementById("resetStorage")
+  .addEventListener("click", resetLocalStorageString);
+
+function resetLocalStorageString() {
+  if (localStorage.getItem("storage")) {
+    localStorage.clear();
+  }
+}

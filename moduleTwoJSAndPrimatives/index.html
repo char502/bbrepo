@@ -38,11 +38,13 @@
     <h1>3: Storage</h1>
     <p>Whatever text that is added to the box below must be stored and maintanted in localstorage. This should persist accross reloads.</p>
     <p>Care must be added to the handling of this in the case that I do not overwrite it, and can edit at any point in the string.</p>
-    <input type="text" placeholder="Some text here" style="width: 100%;">
+    <input type="text" id="forLocalStorage" placeholder="Some text here" style="width: 100%;">
+
+    <div>
+      <p id="storageResult"></p>
+      <button id="resetStorage">Reset Local Storage if needed (refresh required)</button>
+    </div>
   </div>
-
-
-
   <script src="./index.js"></script>
 </body>
 </html>
