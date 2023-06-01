@@ -23,7 +23,6 @@ const App = () => {
       setProducts(data?.collectionByHandle?.products?.edges);
     }
   }, [data, error]);
-  //============================================================
 
   if (loading) {
     // Data is still loading....

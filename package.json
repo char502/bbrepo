@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve:1": "live-server moduleOneBasics/",
+    "serve:1": "live-server moduleOneBasics",
     "compile:1": "node-sass -rw moduleOneBasics/index.scss -o moduleOneBasics",
     "dev:1": "npm-run-all -p serve:1 compile:1",
     "serve:2": "live-server moduleTwoJSAndPrimatives/",

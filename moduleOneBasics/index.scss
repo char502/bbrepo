@@ -64,25 +64,22 @@
     }
   }
 
-  background-color: black;
-
-  //   .grid-product-list {
-  //     .card-container {
-  //       display: grid;
-  //       padding: 20px;
-  //       grid-gap: 1rem;
-  //     }
-  //   }
-}
-
-.module-one .grid-product-list {
-//  @extend .module-one;
-
   .card-container {
-    background-color: lightcoral;
-    //       display: grid;
-    //       padding: 20px;
-    //       grid-gap: 1rem;
-    //     }
+    display: grid;
+    max-width: 1440px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .product-card {
+    border: 1px solid lightgrey;
   }
 }

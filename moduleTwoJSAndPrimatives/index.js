@@ -172,6 +172,8 @@ function replaceBrownWithSandyFunc() {
 
 // =============================================
 
+// localStorage data
+
 const input = document.getElementById("forLocalStorage");
 
 const displayedResult = document.getElementById("storageResult");
